@@ -1,14 +1,17 @@
-// Assignment Code
+// Setting a variable for the Generate Password Button
 var generateBtn = document.querySelector("#generate");
 // character type arrays
 var pwdUpperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var pwdLowerChars = 'abcdefghijklmnopqrstuvwxyz'.split('');
 var pwdNumbers = '0123456789'.split('');
-var pwdSpecialChars = '`!@#$%^&*()-_+={}[]|\\:;"\"<>./?'.split('');
+var pwdSpecialChars = '`!@#$%^&*()-_+={}[]|\\:;<>./?'.split('');
 
 function writePassword() {
+  //Empty array to be filled with all possible characters
   var allChars = [];
+  //empty array to be filled with 1 random character from user selections
   var requiredChars = [];
+  // empty array to be filled with random characters from allChars
   var pwdFinal = [];
   //prompt for pwd length
   var pwdLength = parseInt(prompt('Your Password must be at least 8 characters and no longer 128. Enter a number between 8 and 128'));
@@ -16,7 +19,7 @@ function writePassword() {
   //error if not in range
   if (pwdLength < 8 || pwdLength > 128 || isNaN(pwdLength)) {
     alert('Please choose a number between 8 and 128');
-    return;
+    writePassword();
   }
 
   //Collect users choices
@@ -31,6 +34,7 @@ function writePassword() {
     return;
   }
 
+  //if user chooses uppercase characters, grab 1 random character for requiredChars array, and pass all characters into allChars array
   if (pwdUpperChoice){
     var randRequired = Math.floor(Math.random()*pwdUpperChars.length);
     requiredChars.push(pwdUpperChars[randRequired]);
@@ -39,6 +43,7 @@ function writePassword() {
     console.log(allChars);
   }
 
+  //if user chooses lowercase characters, grab 1 random character for requiredChars array, and pass all characters into allChars array
   if (pwdLowerChoice){
     var randRequired = Math.floor(Math.random()*pwdLowerChars.length);
     requiredChars.push(pwdLowerChars[randRequired]);
@@ -47,6 +52,7 @@ function writePassword() {
     console.log(allChars);
   }
 
+    //if user chooses numbers, grab 1 random character for requiredChars array, and pass all characters into allChars array
   if (pwdNumberChoice){
     var randRequired = Math.floor(Math.random()*pwdNumbers.length);
     requiredChars.push(pwdNumbers[randRequired]);
@@ -55,6 +61,7 @@ function writePassword() {
     console.log(allChars);
   }
 
+  //if user chooses special characters, grab 1 random character for requiredChars array, and pass all characters into allChars array
   if (pwdSpecialChoice){
     var randRequired = Math.floor(Math.random()*pwdSpecialChars.length);
     requiredChars.push(pwdSpecialChars[randRequired]);
@@ -63,13 +70,15 @@ function writePassword() {
     console.log(allChars);
   }  
   
-
+//Function to generate final password
   var generatePassword = function () {
+    //For loop to grab random characters from allChars = the length the user desires - the number of required characters
     for (var i = 0; i < pwdLength-requiredChars.length; i++) {
       var randomNumber = Math.floor(Math.random() * allChars.length);
-      // console.log(oneArray[randomNumber]);
+      // pushing random charactees into pwdFinal array
       pwdFinal.push(allChars[randomNumber]);
     }
+    //concatenating the pwdFinal array with the requiredChars array and converting from string to array
     return pwdFinal.concat(requiredChars).join("");
   }
   var password = generatePassword();
