@@ -16,11 +16,11 @@ https://bahuisken.github.io/Password-Generator/
 
 ## Screenshots
 
-# MOBILE
+- Mobile
 
 ![Mobile Portfolio demo](./assets/images/pwd_generator__mobile_screenshot.png)
 
-# DESKTOP
+- Desktop
 
 ![Desktop Portfolio demo](./assets/images/pwd_generator_screenshot.png)
 
