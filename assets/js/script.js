@@ -18,8 +18,8 @@ function writePassword() {
 
   //error if not in range
   if (pwdLength < 8 || pwdLength > 128 || isNaN(pwdLength)) {
-    alert('Please choose a number between 8 and 128');
-    writePassword();
+    alert('You must choose a number between 8 and 128. Please clicik OK and then click "Generate Password" again');
+    return;
   }
 
   //Collect users choices
