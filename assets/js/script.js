@@ -18,13 +18,13 @@ function writePassword() {
 
   //error if not in range
   if (pwdLength < 8 || pwdLength > 128 || isNaN(pwdLength)) {
-    alert('You must choose a number between 8 and 128. Please clicik OK and then click "Generate Password" again');
+    alert('You must choose a number between 8 and 128. Click OK and then Generate Password');
     return;
   }
 
   //Collect users choices
   var pwdUpperChoice = confirm('Do you want the password to contain Uppercase Characters? Click OK for Yes, Cancel for No.');
-  var pwdLowerChoice = confirm('Do you want the password to contain Lowecare Characters? Click OK for Yes, Cancel for No.');
+  var pwdLowerChoice = confirm('Do you want the password to contain Lowecase Characters? Click OK for Yes, Cancel for No.');
   var pwdNumberChoice = confirm('Do you want the password to contain Numbers? Click OK for Yes, Cancel for No.');
   var pwdSpecialChoice = confirm('Do you want the password to contain Special Characters? Click OK for Yes, Cancel for No.');
 
