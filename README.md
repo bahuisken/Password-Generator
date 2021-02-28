@@ -1,4 +1,4 @@
-# Password-Generator
+# Password Generator
 
 For this assignment, I was tasked with creating an application that enables users to generate random passwords based on criteria that they’ve selected from a series of questions they are presented. Javascript was utilized to generate the launch the questions / prompts, and to generate the final password. Below is the criteria the user is presented with
 
